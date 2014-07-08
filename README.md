@@ -1,9 +1,9 @@
-Cordova Asset Compiler & Loader
+AppCache Extra
 ================
 
 ## Introduction
 
-Cordova Loader's goal is to make using Meteor with Cordova as easy as using Meteor itself. The compiler interprets the provided Cordova project directory and compiles the assets into minified, platform-specific JavaScript which is stored in memory. When the client loads, it automatically pulls in the platform-specific cordova code for that device. The Cordova API can be used from Meteor the same as it is from vanilla JS apps. Enjoy!
+Meteor's appcache package with the ability to add a prompt when the appcache is reloaded so to avoid the awkward UX experience of havin the app just reload out of no where. Also, added is the ability to manually add files to the application cache manifest if you want to serve them yourself.
 
 ![demo](http://cl.ly/image/3H2w3J0x3S29/Image%202014-07-07%20at%2011.38.37%20PM.png)
 
