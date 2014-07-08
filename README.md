@@ -36,6 +36,10 @@ mrt add appcache-cordova
   }
 }
 ````
+###### Options
+* appcache.addedFiles: Array of files you want to manually add to application cache manifest
+* public.appcache: either propt or doesn't matter.. if prompt it will render the appcache-prompt template instead of auto refreshing the app
+
 ================
 
 ## Final Notes
