@@ -3,7 +3,7 @@ AppCache Extra
 
 ## Introduction
 
-Meteor's appcache package with the ability to add a prompt when the appcache is reloaded so to avoid the awkward UX experience of havin the app just reload out of no where. Also, added is the ability to manually add files to the application cache manifest if you want to serve them yourself.
+Meteor's appcache package with the ability to add a prompt when the appcache is reloaded as to avoid the awkward UX experience of having the app just reload out of no where. Also, added is the ability to manually add files to the application cache manifest if you want to serve them yourself.
 
 ![demo](http://cl.ly/image/3H2w3J0x3S29/Image%202014-07-07%20at%2011.38.37%20PM.png)
 
