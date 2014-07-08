@@ -11,15 +11,9 @@ Meteor's appcache package with the ability to add a prompt when the appcache is 
 
 ## Installation / Setup
 
-##### Requirements
-* Xcode: 5.1.1
-* [Cordova: 3.5](http://cordova.apache.org/)
-
-================
-
 ##### Package Installation
 ````
-mrt add appcache-cordova
+mrt add appcache-extra
 ````
 ================
 
