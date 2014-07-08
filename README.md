@@ -38,7 +38,7 @@ mrt add appcache-extra
 
 ##### Customization
 
-You can overwrite the `appcache-prompt` template and styling how ever you would like!
+You can overwrite the `appcache-prompt` template and styling however you would like!
 
 ================
 
