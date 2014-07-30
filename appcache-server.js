@@ -132,7 +132,7 @@ WebApp.connectHandlers.use(function(req, res, next) {
   });
 
   if (Meteor.settings && Meteor.settings.appcache && Meteor.settings.appcache.addedFiles) {
-    _.each(Meteor.settings.appcache.cacheFiles, function(file) {
+    _.each(Meteor.settings.appcache.addedFiles, function(file) {
       manifest += file + "\n";
     });
   }
