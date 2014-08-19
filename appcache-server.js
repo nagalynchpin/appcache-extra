@@ -16,6 +16,44 @@ Meteor.AppCache = {
           RoutePolicy.declare(urlPrefix, 'static-online');
         });
       }
+      // option added by appcache-extra
+      else if (option === 'addPaths') {
+        // add paths to addedFiles, which gets added to the manifest below
+        Meteor.settings = Meteor.settings || {};
+        Meteor.settings.appcache = Meteor.settings.appcache || {};
+        Meteor.settings.appcache.addedFiles = Meteor.settings.appcache.addedFiles || [];
+        var addToCache = function(publicPath) {
+          // folders in public with a '.#' prefix get omitted by meteor's
+          // file watchers. If we include such a folder, we wan't to
+          // get rid of this prefix in order to be able to serve them statically.
+          publicPath = publicPath.replace(".#", "");
+          //console.log("push "+publicPath);
+          Meteor.settings.appcache.addedFiles.push(publicPath);
+        }
+
+        // walk over each path
+        // if it's a file, add it
+        // if it's a directory, add the contained files
+        // recursively walking into subdirectories not supported by now
+        var publicPath = process.env.PWD+"/public/";
+        _.each(value, function (path) {
+          var absolutePath = publicPath+path;
+          stats = fs.lstatSync(absolutePath);
+          if(stats.isFile()){
+            addToCache(path);
+          }
+          else if(stats.isDirectory()) {
+            var items = fs.readdirSync(absolutePath);
+            _.each(items, function(item) {
+              if(fs.lstatSync(absolutePath+item).isFile()) {
+                addToCache(path+item);
+              } else {
+                console.log("Appcache: omitting nested folder/item: "+item);
+              }
+            });
+          }
+        });
+      }
       else if (value === false) {
          disabledBrowsers[option] = true;
       }
