@@ -54,6 +54,9 @@ Meteor.AppCache = {
           }
         });
       }
+      else if (option === 'disableRequest') {
+        disableRequest = value;
+      }
       else if (value === false) {
          disabledBrowsers[option] = true;
       }
@@ -74,10 +77,15 @@ var browserDisabled = function(request) {
 WebApp.addHtmlAttributeHook(function (request) {
   if (browserDisabled(request))
       return null;
+  /* FIXME doesn't work here because request hasn't set headers on it
+  else if(typeof disableRequest === "function" && disableRequest(request))
+      return null;
+  */
   else
     return { manifest: "/app.manifest" };
 });
 
+var disableRequest = null
 WebApp.connectHandlers.use(function(req, res, next) {
   if (req.url !== '/app.manifest') {
     return next();
@@ -97,6 +105,16 @@ WebApp.connectHandlers.use(function(req, res, next) {
     res.writeHead(404);
     res.end();
     return;
+  }
+
+  // added by appcache-extra
+  // ask disableRequest if we shall serve the manifest for this request
+  if (typeof disableRequest === "function") {
+    if(disableRequest(req)) {
+      res.writeHead(404);
+      res.end();
+      return;
+    }
   }
 
   var manifest = "CACHE MANIFEST\n\n";
