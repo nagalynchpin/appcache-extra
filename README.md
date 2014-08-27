@@ -40,11 +40,17 @@ mrt add appcache-extra
 ````
 Meteor.AppCache.config({
   addPaths: ['/.#static/img/'],
+  disableRequest: function(req) {
+    if ((req.headers.cookie != null) && req.headers.cookie.indexOf("my-key") !== -1)
+      return false;
+    return true;
+  }
 })
 
 ````
 ###### Options
 * addPaths: Array of folders relative to public/ which you want to manually add to application cache manifest. With this option it's possible to add files hidden from meteor's file watcher (due to it's bad performance with *many* files) [SO](http://stackoverflow.com/questions/11504883/how-to-prevent-meteor-from-watching-files/25161820#25161820). Note: recursive folders not supported yet.
+* disableRequest: function which get's called for every request for /app.manifest. In here you can decide to serve the appcache manifest based on the request of the client. This can be used for example to only serve the appcache manifest if a purchased app (which sets a magic header or cookie value) requests the page.
 
 ================
 
