@@ -36,6 +36,18 @@ mrt add appcache-extra
 
 ================
 
+##### Meteor AppCache config
+````
+Meteor.startup ->
+  Meteor.AppCache.config
+    addPaths: ['/.#static/img/']
+
+````
+###### Options
+* addPaths: Array of folders relative to public/ which you want to manually add to application cache manifest. With this option it's possible to add files hidden from meteor's file watcher (due to it's bad performance with *many* files) [SO](http://stackoverflow.com/questions/11504883/how-to-prevent-meteor-from-watching-files/25161820#25161820). Note: recursive folders not supported yet.
+
+================
+
 ##### Customization
 
 You can overwrite the `appcache-prompt` template and styling however you would like!
