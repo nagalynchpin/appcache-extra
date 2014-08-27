@@ -38,9 +38,9 @@ mrt add appcache-extra
 
 ##### Meteor AppCache config
 ````
-Meteor.startup ->
-  Meteor.AppCache.config
-    addPaths: ['/.#static/img/']
+Meteor.AppCache.config({
+  addPaths: ['/.#static/img/'],
+})
 
 ````
 ###### Options
