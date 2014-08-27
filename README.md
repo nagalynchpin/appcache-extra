@@ -45,7 +45,7 @@ Meteor.AppCache.config({
       return false;
     return true;
   }
-})
+});
 
 ````
 ###### Options
