@@ -219,7 +219,7 @@ WebApp.connectHandlers.use(function(req, res, next) {
 
 var sizeCheck = function() {
   var totalSize = 0;
-  _.each(WebApp.clientProgram.manifest, function (resource) {
+  _.each(WebApp.clientPrograms[WebApp.defaultArch].manifest, function (resource) {
     if (resource.where === 'client' &&
         ! RoutePolicy.classify(resource.url)) {
       totalSize += resource.size;
