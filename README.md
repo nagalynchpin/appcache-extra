@@ -63,17 +63,3 @@ Meteor.AppCache.config({
 ##### Customization
 
 You can overwrite the `appcache-prompt` template and styling however you would like!
-
-================
-
-## Final Notes
-
-##### Running your app with settings
-
-````
-meteor --settings settings.json
-````
-
-================
-
-If you want more features than this provides, file an issue. Feature requests/contributions are welcome.
