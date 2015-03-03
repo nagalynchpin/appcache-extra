@@ -1,5 +1,5 @@
 Package.describe({
-  name: "hybrid:appcache-extra"
+  name: "hybrid:appcache-extra",
   summary: "Meteor's appcache + ability to prompt + manually add files",
   version: "0.1.0",
   git: "https://github.com/meteorhybrid/appcache-extra"
@@ -17,7 +17,7 @@ Package.onUse(function (api) {
     'routepolicy',
     'webapp',
     'underscore'
-  ] , 'server');
+  ], 'server');
 
   api.use('autoupdate', 'server', {weak: true});
 
@@ -26,6 +26,6 @@ Package.onUse(function (api) {
     'appcache-prompt.css',
     'appcache-client.js'
   ], 'client');
-  
+
   api.addFiles('appcache-server.js', 'server');
 });

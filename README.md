@@ -13,7 +13,7 @@ Meteor's appcache package with the ability to add a prompt when the appcache is 
 
 ##### Package Installation
 ````
-meteor add andrewreedy:appcache-extra
+meteor add hybrid:appcache-extra
 ````
 ================
 
