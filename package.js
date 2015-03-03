@@ -1,5 +1,5 @@
 Package.describe({
-  name: "hybrid:appcache-extra"
+  name: "hybrid:appcache-extra",
   summary: "Meteor's appcache + ability to prompt + manually add files",
   version: "0.1.0",
   git: "https://github.com/meteorhybrid/appcache-extra"
