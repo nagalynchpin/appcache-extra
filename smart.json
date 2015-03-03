@@ -1,8 +1,0 @@
-{
-    "name": "appcache-cordova",
-    "description": "Enable the application cache in the browser",
-    "homepage": "https://github.com/andrewreedy/meteor-appcache-cordova",
-    "author": "Andrew Reedy",
-    "version": "0.0.1",
-    "git": "https://github.com/andrewreedy/meteor-appcache-cordova.git"
-}
