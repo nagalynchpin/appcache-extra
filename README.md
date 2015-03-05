@@ -1,13 +1,11 @@
-AppCache Extra
-================
+#AppCache Extra
 
-## Introduction
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/meteorhybrid/platform?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 Meteor's appcache package with the ability to add a prompt when the appcache is reloaded as to avoid the awkward UX experience of having the app just reload out of no where. Also, added is the ability to manually add files to the application cache manifest if you want to serve them yourself.
 
 ![demo](http://cl.ly/image/3H2w3J0x3S29/Image%202014-07-07%20at%2011.38.37%20PM.png)
 
-================
 
 ## Installation / Setup
 
@@ -15,7 +13,6 @@ Meteor's appcache package with the ability to add a prompt when the appcache is 
 ````
 meteor add hybrid:appcache-extra
 ````
-================
 
 ##### Meteor settings file (settings.json)
 
